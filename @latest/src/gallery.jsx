@@ -1,6 +1,5 @@
 import LightGallery from 'lightgallery/react';
 
-
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
@@ -8,7 +7,6 @@ import 'lightgallery/css/lg-autoplay.css';
 import 'lightgallery/css/lg-fullscreen.css';
 import 'lightgallery/css/lg-share.css';
 import 'lightgallery/css/lg-rotate.css';
-
 
 
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -55,7 +53,7 @@ export function Gallery() {
                 {images.map((image, index) => {
                     return (
                         <a href={image.src} key={index}>
-                            <img className="gallery-img" alt={image.alt} src={image.src} />
+                            <img alt={image.alt} src={image.src} />
                         </a>
                     )
                 })}
