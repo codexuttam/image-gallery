@@ -13,10 +13,16 @@ img {
     display: block;
     padding: 5px 0px;
     border-radius: 20px;
-    transition: transform 0.2s;
+    transition: 
+        transform 0.3s cubic-bezier(.25,.8,.25,1),
+        box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    /* Add perspective for 3D effect */
+    will-change: transform;
 }
 
 img:hover {
-    filter: opacity(.9);
-    transform: scale(1.01);
+    filter: opacity(.95);
+    transform: perspective(600px) rotateY(10deg) scale(1.04);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 1.5px 8px rgba(0,0,0,0.15);
 }

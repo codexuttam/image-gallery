@@ -55,7 +55,7 @@ export function Gallery() {
                 {images.map((image, index) => {
                     return (
                         <a href={image.src} key={index}>
-                            <img alt={image.alt} src={image.src} />
+                            <img className="gallery-img" alt={image.alt} src={image.src} />
                         </a>
                     )
                 })}
