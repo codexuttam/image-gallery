@@ -1,22 +1,71 @@
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
 body {
-    background: #000;
-    margin: 18px;
+    min-height: 100vh;
+    background: url(plain-black-background-5i70jfar781fi0q6.jpg);
 }
 
-.lg-react-element {
-    column-count: 3;
-    column-gap: 10px;
+.content {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 40px auto;
+    transform-style: preserve-3d;
+    animation: animate 30s infinite linear;
 }
 
-img {
-    max-width: 100%;
+.content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes animate {
+    0% { transform: perspective(1000px) rotateY(0deg); }
+    100% { transform: perspective(1000px) rotateY(-360deg); }
+}
+
+.span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160px;              
+    height: 160px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: rotateY(calc(var(--index) * 18.947deg)) translateZ(500px) translate(-50%, -50%);
+    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.span:hover {
+    transform: scale(0.7) rotateY(50deg) translateZ(500px);
+    z-index: 1;
+}
+
+.image {
+    width: 140px;              
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     display: block;
-    padding: 5px 0px;
-    border-radius: 20px;
-    transition: transform 0.2s;
+    transition: 0.5s;
 }
 
-img:hover {
-    filter: opacity(.9);
-    transform: scale(1.01);
+.content:hover .span {
+    filter: blur(2px) brightness(0.7);
+    transition: filter 0.4s, transform 0.5s;
+    z-index: 0;
+}
+
+.content .span:hover {
+    filter: none;
+    z-index: 2;
+    transform: rotateY(calc(var(--index) * 18.947deg)) translateZ(500px) translate(-50%, -50%) scale(1.2);
+    transition: filter 0.4s, transform 0.5s;
 }
