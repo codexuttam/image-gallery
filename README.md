@@ -1,1 +1,1 @@
-This is a simple image gallery whhich I made using React 
+This is a simple image gallery which I made using React Js 
